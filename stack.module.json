@@ -1,0 +1,13 @@
+{
+  "schemaVersion": 1,
+  "id": "memcached",
+  "repo": "memcached-stack-module",
+  "runtimeId": "memcached",
+  "lifecycle": "active",
+  "dependencies": [
+    "stack-foundation"
+  ],
+  "overlays": [
+    "stack.compose/memcached.yml"
+  ]
+}
