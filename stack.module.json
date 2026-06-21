@@ -16,7 +16,8 @@
   "smoke": "external-only",
   "smokeUnsupportedReason": "requires generated bundle context, deployed networking, secrets, or service dependencies",
   "overlays": [
-    "stack.compose/memcached.yml"
+    "stack.compose/memcached.yml",
+    "stack.kotlin/test-runner/src/main/kotlin/org/webservices/testrunner/suites/MemcachedCachingLayerTests.kt"
   ],
   "testAssets": []
 }
