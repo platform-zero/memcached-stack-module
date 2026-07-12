@@ -1,0 +1,39 @@
+{
+  "configuration": {
+    "schema": {
+      "additionalProperties": false,
+      "properties": {},
+      "type": "object"
+    }
+  },
+  "id": "memcached",
+  "overlays": [
+    "stack.compose/memcached.yml",
+    "stack.kotlin/test-runner/src/main/kotlin/org/webservices/testrunner/suites/MemcachedCachingLayerTests.kt"
+  ],
+  "provides": [
+    {
+      "capability": "module:memcached",
+      "version": "1"
+    }
+  ],
+  "requires": [
+    {
+      "capability": "module:stack-foundation",
+      "version": "1"
+    }
+  ],
+  "schemaVersion": 1,
+  "services": [
+    {
+      "name": "memcached",
+      "routes": [],
+      "volumes": []
+    }
+  ],
+  "verification": {
+    "commands": [
+      "test -f stack.module.json && test -f module.json"
+    ]
+  }
+}
