@@ -1,0 +1,27 @@
+---
+schemaVersion: 1
+module: "memcached"
+target: "core"
+services:
+  memcached:
+    image: "memcached:1.6-alpine"
+    containerName: "memcached"
+    lifecycle: "daemon"
+    updatePolicy: "registry"
+    placement: "rootful"
+    networks:
+    - "memcached"
+    health:
+      test:
+      - "CMD-SHELL"
+      - "printf 'version\\n' | nc -w 2 localhost 11211 | grep -q 'VERSION'"
+      interval: "30s"
+      timeout: "5s"
+      retries: 5
+    command:
+    - "memcached"
+    - "-m"
+    - "256"
+    restart: "unless-stopped"
+networks: {}
+volumes: {}
