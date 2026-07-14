@@ -6,7 +6,7 @@
 - Lifecycle: `active`
 
 ## Owned overlays
-- `stack.compose/memcached.yml`
+- `stack.runtime.yaml`
 
 ## Dependencies
 - `stack-foundation`
